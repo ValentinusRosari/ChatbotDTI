@@ -83,31 +83,12 @@ function App() {
   };
 
   const sendMessageToServer = async (userMessages) => {
-    try {
-      const response = await fetch("http://127.0.0.1:5000/get_answer", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          question: userMessages.map((message) => message.text), // Extract text from messages
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const botResponse = data.choices[1].message.content;
-
-        // Add the bot's response to the chat
-        addMessage(botResponse, false);
-
-        setIsTyping(false); // Turn off the "typing" indicator
-      } else {
-        throw new Error("Server request failed");
-      }
-    } catch (error) {
-      console.error("Error processing bot response:", error);
+    if (userMessages === "halo") {
+      addMessage("hii", false);
+    } else {
+      addMessage("saya tidak mengerti", false);
     }
+    return;
   };
 
   return (
