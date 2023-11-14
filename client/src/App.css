@@ -1,0 +1,226 @@
+.app-container {
+  position: relative; /* Untuk mengatur posisi relatif kontennya */
+  width: 100%; /* Lebar 100% dari tampilan */
+  height: 100vh; /* Tinggi 100% dari tampilan (viewport height) */
+  overflow: hidden; /* Mengatur overflow jika konten melebihi tinggi */
+  /* Anda dapat menambahkan atribut lain sesuai kebutuhan aplikasi Anda */
+}
+
+/* CSS untuk chatbot tertutup */
+.chatbot-container.closed {
+  transform: scale(0);
+  transform-origin: 100% 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* CSS untuk chatbot terbuka */
+.chatbot-container.open {
+  transform: scale(1);
+  transform-origin: 100% 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Gaya untuk tombol toggle */
+.toggle-button {
+  position: fixed;
+  bottom: 10px;
+  right: 25px;
+  background-color: #073c64;
+  padding: 8px 10px;
+  cursor: pointer;
+  border: none;
+  border-radius: 40%;
+}
+
+/* Gaya saat tombol toggle dihover */
+.toggle-button:hover {
+  background-color: #1a2c43;
+}
+
+.toggle-logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* Define a container for the chatbot */
+.chatbot-container {
+  position: fixed;
+  bottom: 10px;
+  right: 25px;
+  height: 500px;
+  width: 350px;
+  background-color: #d9d9d9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+/*styling chatbot header*/
+.chatbot-header {
+  position: fixed;
+  height: 50px;
+  width: 350px;
+  background-color: #073c64;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.chatbot-header-logo {
+  position: absolute;
+  background-color: #fdcb2c;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  height: 32.5px;
+  width: 32.5px;
+  margin: 5px;
+  left: 8px;
+  top: 2px;
+}
+
+.chatbot-logo {
+  position: absolute;
+  justify-content: center;
+  top: 3px;
+  left: 3.75px;
+  height: 25px;
+  width: 25px;
+}
+
+.bot-name {
+  position: absolute;
+  color: white;
+  font-family: "Helvetica";
+  font-size: 15px;
+  font-weight: 400;
+  left: 60px;
+  top: 11px;
+}
+
+p {
+  font-size: 8px;
+  margin-top: 0px;
+  color: #ffffffbb;
+}
+
+.faq-button {
+  left: 250px;
+  top: 13px;
+  position: absolute;
+  padding: 2px 7px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #1a2c43;
+  border: 2px solid #fff;
+  opacity: 75%;
+}
+
+.faq-button:hover {
+  opacity: 100%;
+}
+
+.close-button {
+  left: 310px;
+  top: 12px;
+  position: absolute;
+  background-color: #073c64;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.close-logo {
+  opacity: 75%;
+  height: 20px;
+  width: 20px;
+}
+
+.close-logo:hover {
+  opacity: 100%;
+}
+
+/* Styling for chat messages */
+.chat-messages {
+  position: relative;
+  top: 50px;
+  height: 400px; /* Set a fixed or max height for the chat area */
+  overflow-y: auto; /* Enable vertical scrolling if messages overflow */
+  border: 0px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Styling for individual chat messages */
+.message {
+  display: flex;
+  padding: 8px;
+  margin: 5px;
+  border-radius: 5px;
+  clear: both;
+  font-family: "Helvetica";
+  font-size: 13px;
+  font-weight: 400;
+  word-wrap: break-word;
+  max-width: 80%;
+}
+
+/* Styling for user messages */
+.user {
+  float: right;
+  background-color: #073c64;
+  color: #fff;
+  text-align: left;
+  max-width: 250px;
+}
+
+/* Styling for bot messages */
+.bot {
+  float: left;
+  background-color: #e3e3e3;
+  text-align: left;
+  max-width: 250px;
+}
+
+/* Styling for the user input field and send button */
+.user-input {
+  width: 340px;
+  top: 43px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d9d9d9;
+  border-top: 1px solid #9f9f9f;
+  border-radius: 0px 0px 15px 15px;
+  padding: 5px;
+}
+
+.user-input input {
+  background-color: #d9d9d9;
+  flex: 1;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.user-input button {
+  border: 0px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.send-logo,
+.mic-logo {
+  opacity: 75%;
+  height: 20px;
+  width: 20px;
+}
+
+.send-logo:hover,
+.mic-logo:hover {
+  opacity: 100%;
+}
