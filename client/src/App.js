@@ -83,12 +83,29 @@ function App() {
   };
 
   const sendMessageToServer = async (userMessages) => {
-    if (userMessages === "halo") {
-      addMessage("hii", false);
-    } else {
-      addMessage("saya tidak mengerti", false);
+    try {
+      const apiUrl = "https://backendopenaidssdi.azurewebsites.net/chatbot";
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ user_input: userMessages }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Terjadi kesalahan saat menghubungi server.");
+      }
+
+      const responseData = await response.json();
+
+      // Lakukan sesuatu dengan data yang diterima dari server (responseData)
+      // Misalnya, panggil fungsi addMessage dengan pesan dari server
+      addMessage(responseData.response, false);
+    } catch (error) {
+      console.error("Error:", error.message);
+      addMessage("Terjadi kesalahan saat berkomunikasi dengan server.", false);
     }
-    return;
   };
 
   return (
